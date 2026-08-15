@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>BRICK BREAKER PRO // NEXUS6</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="bg-overlay"></div>
+
+  <div class="viewport">
+    
+    <!-- Top Navigation Bar -->
+    <header class="header">
+      <a href="../../index.html" class="back-btn">&larr; HUB</a>
+      <div class="title-group">
+        <span class="module-id">MOD // 04</span>
+        <h1 class="game-title">BRICK BREAKER</h1>
+      </div>
+      <div class="score-board">
+        <div class="score-box">SCORE <span id="score">00000</span></div>
+        <div class="score-box muted">HIGH <span id="high-score">00000</span></div>
+      </div>
+    </header>
+
+    <!-- Difficulty Slider Control -->
+    <section class="difficulty-bar">
+      <div class="difficulty-label">
+        <span>OVERDRIVE & BALL VELOCITY</span>
+        <span id="diffValue" class="diff-tag">NORMAL (BALANCED)</span>
+      </div>
+      <input type="range" id="diffSlider" min="1" max="5" value="3" step="1" class="slider" />
+    </section>
+
+    <!-- Arena Container -->
+    <main class="arena-wrapper">
+      <div class="status-hud">
+        <div class="hud-item">LIVES: <span id="lives" class="accent-danger">3</span></div>
+        <div class="hud-item combo-display" id="comboTag">COMBO 1x</div>
+        <div class="hud-item" id="buffStatus">STATUS: NOMINAL</div>
+      </div>
+
+      <canvas id="gameCanvas" width="400" height="520"></canvas>
+
+      <!-- Dynamic Overlay -->
+      <div id="gameOverlay" class="overlay">
+        <h2 id="overlayTitle">BRICK BREAKER</h2>
+        <p id="overlaySub">CLEAR THE MATRIX // DEPLOY TACTICAL BUFFS & FIREBALLS</p>
+        <button id="startBtn" class="action-btn">INITIALIZE RUN</button>
+      </div>
+    </main>
+
+    <!-- Touch Control Panel for Mobile -->
+    <div class="touch-controls">
+      <button class="touch-btn" id="btnLeft">&larr; LEFT</button>
+      <button class="touch-btn action" id="btnFire">FIRE LASER</button>
+      <button class="touch-btn" id="btnRight">RIGHT &rarr;</button>
+    </div>
+
+    <!-- Footer Controls Bar -->
+    <footer class="footer">
+      <span class="controls-hint">[A/D] MOVE | [SPACE] LASER | MOUSE / TOUCH TRACK</span>
+      <span class="author">NEXUS6 // <a href="https://github.com/mohx2" target="_blank">@MOHX2</a></span>
+    </footer>
+
+  </div>
+
+  <script src="breaker.js"></script>
+</body>
+</html>

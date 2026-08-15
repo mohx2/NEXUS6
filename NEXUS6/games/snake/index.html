@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>SNAKE // NEXUS6</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="bg-overlay"></div>
+
+  <div class="viewport">
+    
+    <!-- Top Bar Navigation -->
+    <header class="header">
+      <a href="../../index.html" class="back-btn">&larr; HUB</a>
+      <div class="title-group">
+        <span class="module-id">MOD // 01</span>
+        <h1 class="game-title">SNAKE</h1>
+      </div>
+      <div class="score-board">
+        <div class="score-box">SCORE <span id="score">000</span></div>
+        <div class="score-box muted">BEST <span id="high-score">000</span></div>
+      </div>
+    </header>
+
+    <!-- Difficulty Adjustment Bar -->
+    <section class="difficulty-bar">
+      <div class="difficulty-label">
+        <span>SPEED / DIFFICULTY</span>
+        <span id="diffValue" class="diff-tag">NORMAL (100ms)</span>
+      </div>
+      <input type="range" id="diffSlider" min="1" max="5" value="3" step="1" class="slider" />
+    </section>
+
+    <!-- Canvas Wrapper -->
+    <main class="arena-wrapper">
+      <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+      <!-- Overlay for Start / Game Over -->
+      <div id="gameOverlay" class="overlay">
+        <h2 id="overlayTitle">READY</h2>
+        <p id="overlaySub">PRESS SPACE OR TAP TO INITIALIZE</p>
+        <button id="startBtn" class="action-btn">LAUNCH MODULE</button>
+      </div>
+    </main>
+
+    <!-- Mobile Touch D-Pad -->
+    <div class="touch-controls">
+      <button class="dpad-btn up" id="btnUp">&uarr;</button>
+      <div class="dpad-row">
+        <button class="dpad-btn left" id="btnLeft">&larr;</button>
+        <button class="dpad-btn down" id="btnDown">&darr;</button>
+        <button class="dpad-btn right" id="btnRight">&rarr;</button>
+      </div>
+    </div>
+
+    <!-- Footer Meta -->
+    <footer class="footer">
+      <span class="controls-hint">CONTROLS: [WASD] / [ARROWS] / [SWIPE]</span>
+      <span class="author">NEXUS6 // <a href="https://github.com/mohx2" target="_blank">@MOHX2</a></span>
+    </footer>
+
+  </div>
+
+  <script src="snake.js"></script>
+</body>
+</html>

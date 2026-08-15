@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>PING PONG // NEXUS6</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="bg-overlay"></div>
+
+  <div class="viewport">
+    
+    <!-- Top Bar Navigation -->
+    <header class="header">
+      <a href="../../index.html" class="back-btn">&larr; HUB</a>
+      <div class="title-group">
+        <span class="module-id">MOD // 03</span>
+        <h1 class="game-title">PING PONG</h1>
+      </div>
+      <div class="score-board">
+        <div class="score-box">PLAYER <span id="playerScore">0</span></div>
+        <div class="score-box muted">CPU <span id="cpuScore">0</span></div>
+      </div>
+    </header>
+
+    <!-- Difficulty Adjustment Slider -->
+    <section class="difficulty-bar">
+      <div class="difficulty-label">
+        <span>AI REACTION AGGRESSION</span>
+        <span id="diffValue" class="diff-tag">NORMAL (BALANCED)</span>
+      </div>
+      <input type="range" id="diffSlider" min="1" max="5" value="3" step="1" class="slider" />
+    </section>
+
+    <!-- Canvas Arena & Status Bar -->
+    <main class="arena-wrapper">
+      <div class="status-hud">
+        <div class="mode-status">MATCH: FIRST TO 7 POINTS</div>
+        <div class="speed-indicator" id="ballSpeed">BALL SPEED: 1.0X</div>
+      </div>
+
+      <canvas id="gameCanvas" width="400" height="520"></canvas>
+
+      <!-- Overlay Screen -->
+      <div id="gameOverlay" class="overlay">
+        <h2 id="overlayTitle">CYBER PONG ARENA</h2>
+        <p id="overlaySub">DEFEND YOUR GOAL // DEFEAT THE CPU AGENT</p>
+        <button id="startBtn" class="action-btn">INITIALIZE MATCH</button>
+      </div>
+    </main>
+
+    <!-- Mobile Controls -->
+    <div class="touch-controls">
+      <button class="touch-btn" id="btnLeft">&larr; MOVE LEFT</button>
+      <button class="touch-btn" id="btnRight">MOVE RIGHT &rarr;</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span class="controls-hint">CONTROLS: [A/D] or [LEFT/RIGHT ARROWS] or MOUSE DRAG</span>
+      <span class="author">NEXUS6 // <a href="https://github.com/mohx2" target="_blank">@MOHX2</a></span>
+    </footer>
+
+  </div>
+
+  <script src="pong.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>SPACE SHOOTER // NEXUS6</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="bg-overlay"></div>
+
+  <div class="viewport">
+    
+    <!-- Top Bar Navigation -->
+    <header class="header">
+      <a href="../../index.html" class="back-btn">&larr; HUB</a>
+      <div class="title-group">
+        <span class="module-id">MOD // 02</span>
+        <h1 class="game-title">SPACE SHOOTER</h1>
+      </div>
+      <div class="score-board">
+        <div class="score-box">SCORE <span id="score">00000</span></div>
+        <div class="score-box muted">BEST <span id="high-score">00000</span></div>
+      </div>
+    </header>
+
+    <!-- Difficulty Adjustment Slider -->
+    <section class="difficulty-bar">
+      <div class="difficulty-label">
+        <span>SECTOR THREAT LEVEL</span>
+        <span id="diffValue" class="diff-tag">NORMAL (MODERATE INVASION)</span>
+      </div>
+      <input type="range" id="diffSlider" min="1" max="5" value="3" step="1" class="slider" />
+    </section>
+
+    <!-- Canvas Arena & Status Bar -->
+    <main class="arena-wrapper">
+      <div class="status-hud">
+        <div class="shield-meter">
+          <span>SHIELD</span>
+          <div class="shield-bar-bg"><div id="shieldBar" class="shield-bar-fill" style="width: 100%;"></div></div>
+        </div>
+        <div class="weapon-status" id="weaponStatus">WEAPON: SINGLE MK-I</div>
+      </div>
+
+      <canvas id="gameCanvas" width="400" height="520"></canvas>
+
+      <!-- Overlay Screen -->
+      <div id="gameOverlay" class="overlay">
+        <h2 id="overlayTitle">INTERCEPTOR DEPLOYMENT</h2>
+        <p id="overlaySub">DESTROY INVADERS // COLLECT WEAPON UPGRADES</p>
+        <button id="startBtn" class="action-btn">INITIALIZE COMBAT</button>
+      </div>
+    </main>
+
+    <!-- Mobile Controls -->
+    <div class="touch-controls">
+      <div class="touch-btn-group">
+        <button class="touch-btn" id="btnLeft">&larr;</button>
+        <button class="touch-btn" id="btnRight">&rarr;</button>
+      </div>
+      <button class="touch-btn fire-btn" id="btnFire">FIRE LASERS</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span class="controls-hint">CONTROLS: [WASD/ARROWS] + [SPACE/CLICK]</span>
+      <span class="author">NEXUS6 // <a href="https://github.com/mohx2" target="_blank">@MOHX2</a></span>
+    </footer>
+
+  </div>
+
+  <script src="space.js"></script>
+</body>
+</html>
